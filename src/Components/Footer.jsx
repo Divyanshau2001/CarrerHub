@@ -9,7 +9,6 @@ const Container = styled.div`
 width: 100%;
 bottom: 0;
 background-color: gray;
-// height: 10vw;
 padding:  10px;
 `
 
@@ -29,7 +28,6 @@ gap: 15px;
 `
 
 const PrivacyText = styled.div`
-// margin-top; 25px;
 `
 
 function Footer() {
