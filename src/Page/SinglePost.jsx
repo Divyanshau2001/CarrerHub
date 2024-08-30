@@ -51,12 +51,20 @@ function SinglePost() {
   const {id} = useParams();
 
   useEffect(() => {
+    if(localStorage.getItem(id)!==null){
+      setPost(JSON.parse(localStorage.getItem(id)))
+    }
+    else{
     appwriteService.getPost(id).then((post) => {
-      post ? setPost(post) : console.log("Getting Error ==>", post)
+      post ? setPost(post) : console.log("Getting Error ==>", post);
+      let string = JSON.stringify(post) 
+      localStorage.setItem(id, string) 
     })
-    console.log(post)
-  },[])
+  }
 
+  },[])
+  
+  // {post && console.log(post.title)}
   return (
     <Container>
       <Content>
